@@ -12,7 +12,7 @@ class TestPreProcess():
         self.pre_process = PreProcess(image_path)
 
     def test_resize_if_necessary(self):
-        print 'Testing the resize function'
+        print('Testing the resize function')
         resized_image = self.pre_process.resize_if_necessary(
             self.image_array)
         assert resized_image.shape == (470, 600)

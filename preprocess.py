@@ -8,7 +8,7 @@ from skimage.transform import resize
 
 class PreProcess():
     
-    def __init__(self, image_location):
+    def __init__(self, image_location = "test_images\car6.jpg"):
         """
         reads the image in grayscale and thresholds the image
 

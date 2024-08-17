@@ -11,7 +11,7 @@ import time
 
 #from dbAspect import DBConnection
 
-imagepath = ''
+imagepath = 'test_images\car10.jpg'
 listRow = 0
 listResult = ''
 

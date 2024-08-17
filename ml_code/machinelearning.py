@@ -8,6 +8,9 @@ from sklearn.svm import SVC
 from sklearn.externals import joblib
 from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
+from functools import reduce
+
+from sklearn.cross_validation import cross_val_score
 
 fig = plt.figure(figsize=(12, 12))
 
@@ -18,7 +21,7 @@ def showImage(imgArray, i, char):
     ax1.imshow(imgArray)
     #writeImageToFile(imgArray)
     
-imgListDir = 'C:\Users\Oladeji Femi\Documents\project_stuffs\programs\mine\platenumberchars\\train\\'
+imgListDir = 'C:\\Users\\mahes\\OneDrive\\Desktop\\License-Plate-Recognition-Nigerian-vehicles\\test_images'
 
 imageData = []
 targetData = []
@@ -62,7 +65,7 @@ def thresholdImage(imageDetails):
 lettersDict = {'0':10,'1':10,'2':10,'3':10,'4':10,'5':10,'6':10,'7':10,'8':10,'9':10,'A':10,'B':10,'C':10,'D':10,'E':10,'F':10,'G':10,'H':10,'J':10,'K':10,'L':10,'M':10,'N':10,'P':10,'Q':10,'R':10,'S':10,'T':10,'U':10,'V':10,'W':10,'X':10,'Y':10,'Z':10}
 letters = list(lettersDict.keys())
 
-count=0;
+count=0
 for each in letters:
     eachGroupDir = imgListDir+each+'\\'
     for aTraining in range(lettersDict[each]):
@@ -84,7 +87,7 @@ imageData, targetData = imageData[permutation], targetData[permutation]
     
 model = SVC()
 #model.fit(imageData, targetData)
-from sklearn.cross_validation import cross_val_score
+
 scores = cross_val_score(model, imageData, targetData)
 print(scores)
 print(np.mean(scores))

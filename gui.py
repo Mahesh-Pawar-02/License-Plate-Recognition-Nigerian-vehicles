@@ -212,7 +212,7 @@ class frame_alpr (wx.Frame):
         self.scrollwindow_action.Hide()
         self.text_placeholder.Show()
         self.text_filepath.SetLabel('No image file choosen')
-        self.currentState = 1;
+        self.currentState = 1
         self.enable_or_disable_buttons([self.btn_remove, self.btn_execute], False)
 
     def enable_or_disable_buttons(self, button_list, status):

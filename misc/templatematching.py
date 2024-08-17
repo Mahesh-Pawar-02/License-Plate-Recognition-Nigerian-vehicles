@@ -4,14 +4,14 @@ from skimage.filters import threshold_otsu
 import os.path
 
 
-template = imread("C:\\Users\\Oladeji Femi\\Documents\\programs\\python\\License-Plate-Recognition-Nigerian-vehicles-\\training_data\\train20X20\\2\\2_3.jpg", as_grey=True)
+template = imread("training_data\\train20X20\\2\\2_3.jpg", as_grey=True)
 
 template = template < threshold_otsu(template)
 
 sum = 0.0
 
 for i in range(10):
-    image = imread("C:\\Users\\Oladeji Femi\\Documents\\programs\\python\\License-Plate-Recognition-Nigerian-vehicles-\\training_data\\train20X20\\2\\2_"+str(i)+".jpg", as_grey=True)
+    image = imread("training_data\\train20X20\\2\\2_"+str(i)+".jpg", as_grey=True)
 
     image = image < threshold_otsu(image)
 
@@ -19,7 +19,7 @@ for i in range(10):
     
     sum += v[0, 0]
 
-print sum / 10
+print(sum / 10)
 
 similar_characters = {
     '2':'Z', 'Z':'2', '8':'B', 'B':'8', '5':'S', 'S':'5','0':'D', 'D':'0'
